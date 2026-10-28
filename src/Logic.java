@@ -24,28 +24,14 @@ public class Logic {
 
 
                 String selectedRadioButton = null;
-                int selectedIndex = -1;
 
                 for (int i = 0; i < radioButtons.length; i++){
                     if (radioButtons[i].isSelected()){
                         selectedRadioButton = radioButtons[i].getText();
-                        selectedIndex = i;
                         break;
                     }
 
                 }
-
-
-
-                if (selectedIndex != -1){
-                    System.out.println(selectedRadioButton);
-
-                }
-                else {
-                    System.out.println("Nie wybrano Przycisku");
-                    return;
-                }
-
 
                 for (Map.Entry<String, Screen.Values> entry : hashMap.entrySet()){
 
