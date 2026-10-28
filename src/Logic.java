@@ -54,11 +54,14 @@ public class Logic {
             public void actionPerformed(ActionEvent e) {
                 ArrayList<String> list = view.getTextFromPolls();
 
-                if (list.get(1).length() == 5 && list.get(1).matches("[0-9]+")){
-                    System.out.println("Dane przesyłki zostały wprowadzone");
+                if (list.get(1).length() == 5 && !(list.get(1).matches("[0-9]+"))){
+                    JOptionPane.showMessageDialog(null, "Kod pocztowy zawiera cos innego niz liczby");
                 }
-                else {
-                    System.out.println("Nieprawidłowa liczba cyfr w kodzie pocztowym");
+                if (list.get(1).length() == 5 && list.get(1).matches("[0-9]+")){
+                    JOptionPane.showMessageDialog(null, "Dane przesyłki zostały wprowadzone");
+                }
+                if (list.get(1).length() != 5){
+                    JOptionPane.showMessageDialog(null, "Nieprawidłowa liczba cyfr w kodzie pocztowym");
                 }
             }
         });
